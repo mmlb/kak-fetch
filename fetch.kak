@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0
  
 # trailing colon: :lnum[:colnum[:]]
-hook  global WinDisplay (.*?):(\d+)(?::(\d+):?)? %{ evaluate-commands %sh{
+hook global WinDisplay (.*?):(\d+)(?::(\d+):?)? %{ evaluate-commands %sh{
     file=$kak_hook_param_capture_1
     line=$kak_hook_param_capture_2
     col=$kak_hook_param_capture_3
@@ -16,7 +16,7 @@ hook  global WinDisplay (.*?):(\d+)(?::(\d+):?)? %{ evaluate-commands %sh{
 }}
 
 # trailing parentheses: (lnum[:colnum])
-hook  global WinDisplay (.*?)\((\d+)(?::(\d+))?\) %{ evaluate-commands %sh{
+hook global WinDisplay (.*?)\((\d+)(?::(\d+))?\) %{ evaluate-commands %sh{
     file=$kak_hook_param_capture_1
     line=$kak_hook_param_capture_2
     col=$kak_hook_param_capture_3
@@ -30,7 +30,7 @@ hook  global WinDisplay (.*?)\((\d+)(?::(\d+))?\) %{ evaluate-commands %sh{
     echo "edit $file $line $col";
 }}
 # trailing equals: =lnum=
-hook  global WinDisplay (.*?)=(\d+)= %{ evaluate-commands %sh{
+hook global WinDisplay (.*?)=(\d+)= %{ evaluate-commands %sh{
     file=$kak_hook_param_capture_1
     line=$kak_hook_param_capture_2
 
@@ -44,7 +44,7 @@ hook  global WinDisplay (.*?)=(\d+)= %{ evaluate-commands %sh{
 }}
 
 # trailing dash: -lnum-
-hook  global WinDisplay (.*?)-(\d+)- %{ evaluate-commands %sh{
+hook global WinDisplay (.*?)-(\d+)- %{ evaluate-commands %sh{
     file=$kak_hook_param_capture_1
     line=$kak_hook_param_capture_2
 
@@ -58,7 +58,7 @@ hook  global WinDisplay (.*?)-(\d+)- %{ evaluate-commands %sh{
 }}
 
 # Plan 9 type line spec: [:]#lnum
-hook  global WinDisplay (.*?)(?::)?#(\d+) %{ evaluate-commands %sh{
+hook global WinDisplay (.*?)(?::)?#(\d+) %{ evaluate-commands %sh{
     file=$kak_hook_param_capture_1
     line=$kak_hook_param_capture_2
 
