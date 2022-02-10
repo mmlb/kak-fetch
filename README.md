@@ -7,7 +7,7 @@ Understands different schemes used to indicate file, line, column and jumps to t
 
 #### trailing colon
 
-`$file:lnum[:colnum[:]]`
+`$file:lnum[:[colnum[:]]]`
 
 #### trailing parentheses
 

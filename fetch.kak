@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: AGPL-3.0
  
-# trailing colon: :lnum[[:]colnum[:]]
+# trailing colon: :lnum[:[colnum[:]]]
 hook global WinDisplay (.*?):(\d+)(?::?(\d+)?(?::?))? %{ evaluate-commands %sh{
     file=$kak_hook_param_capture_1
     line=$kak_hook_param_capture_2
